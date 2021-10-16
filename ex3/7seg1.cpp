@@ -16,16 +16,16 @@ int main(void)
 	TCNT1 = 0;   
     while (1) 
     {
-		//while((TIFR & (1<<OCF1A)) == 0);
+		while((TIFR & (1<<OCF1A)) == 0);
 		int i =0;
-		//PORTC = 0b1000001;
+		PORTC = 0b1000001;
 		for(i=0;i<10;i++){
 			PORTD=sevenseg[i];
 			PORTD = 0b11011010;
 			_delay_ms(10);
 		}
-		//TCNT1 = 0;
-		//TIFR |= (1<<OCF1A) ;
+		TCNT1 = 0;
+		TIFR |= (1<<OCF1A) ;
 		
 		
 		
